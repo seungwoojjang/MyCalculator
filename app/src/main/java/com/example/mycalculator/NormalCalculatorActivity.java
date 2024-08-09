@@ -50,8 +50,8 @@ public class NormalCalculatorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_normal_calculator);
         textView = findViewById(R.id.textView);
         btn0 = findViewById(R.id.btn0);
-        btn1 = findViewById(R.id.btn2);
-        btn2 = findViewById(R.id.btn1);
+        btn1 = findViewById(R.id.btn1);
+        btn2 = findViewById(R.id.btn2);
         btn3 = findViewById(R.id.btn3);
         btn4 = findViewById(R.id.btn4);
         btn5 = findViewById(R.id.btn5);
@@ -138,7 +138,7 @@ public class NormalCalculatorActivity extends AppCompatActivity {
         btn0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView.append("0");
+
                 if(textView.getText().toString().length() > 11){
                     Toast.makeText(getApplicationContext(),"digit overflow",Toast.LENGTH_SHORT).show();
                 }
@@ -149,7 +149,7 @@ public class NormalCalculatorActivity extends AppCompatActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView.append("1");
+
                 if(textView.getText().toString().length() > 11){
                     Toast.makeText(getApplicationContext(),"digit overflow",Toast.LENGTH_SHORT).show();
                 }
@@ -160,7 +160,7 @@ public class NormalCalculatorActivity extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView.append("2");
+
                 if(textView.getText().toString().length() > 11){
                     Toast.makeText(getApplicationContext(),"digit overflow",Toast.LENGTH_SHORT).show();
                 }
@@ -171,7 +171,7 @@ public class NormalCalculatorActivity extends AppCompatActivity {
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView.append("3");
+
                 if(textView.getText().toString().length() > 11){
                     Toast.makeText(getApplicationContext(),"digit overflow",Toast.LENGTH_SHORT).show();
                 }
@@ -182,7 +182,7 @@ public class NormalCalculatorActivity extends AppCompatActivity {
         btn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView.append("4");
+
                 if(textView.getText().toString().length() > 11){
                     Toast.makeText(getApplicationContext(),"digit overflow",Toast.LENGTH_SHORT).show();
                 }
@@ -193,7 +193,7 @@ public class NormalCalculatorActivity extends AppCompatActivity {
         btn5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView.append("5");
+
                 if(textView.getText().toString().length() > 11){
                     Toast.makeText(getApplicationContext(),"digit overflow",Toast.LENGTH_SHORT).show();
                 }
@@ -204,7 +204,7 @@ public class NormalCalculatorActivity extends AppCompatActivity {
         btn6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView.append("6");
+
                 if(textView.getText().toString().length() > 11){
                     Toast.makeText(getApplicationContext(),"digit overflow",Toast.LENGTH_SHORT).show();
                 }
@@ -215,7 +215,7 @@ public class NormalCalculatorActivity extends AppCompatActivity {
         btn7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView.append("7");
+
                 if(textView.getText().toString().length() > 11){
                     Toast.makeText(getApplicationContext(),"digit overflow",Toast.LENGTH_SHORT).show();
                 }
@@ -226,7 +226,7 @@ public class NormalCalculatorActivity extends AppCompatActivity {
         btn8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView.append("8");
+
                 if(textView.getText().toString().length() > 11){
                     Toast.makeText(getApplicationContext(),"digit overflow",Toast.LENGTH_SHORT).show();
                 }
@@ -237,7 +237,7 @@ public class NormalCalculatorActivity extends AppCompatActivity {
         btn9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView.append("9");
+
                 if(textView.getText().toString().length() > 11){
                     Toast.makeText(getApplicationContext(),"digit overflow",Toast.LENGTH_SHORT).show();
 
@@ -258,9 +258,11 @@ public class NormalCalculatorActivity extends AppCompatActivity {
         btnPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if(operator == 0){
                     num = Integer.parseInt(textView.getText().toString());
                     operator =1;
+                    textView.setText("");
                 }
                 else {
                     num = Calulate(num,Integer.parseInt(textView.getText().toString()),operator);
@@ -274,11 +276,12 @@ public class NormalCalculatorActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(operator == 0){
                     num = Integer.parseInt(textView.getText().toString());
-                    operator =1;
+                    operator =2;
+                    textView.setText("");
                 }
                 else {
                     num = Calulate(num,Integer.parseInt(textView.getText().toString()),operator);
-                    operator = 1;
+                    operator = 2;
                     textView.setText("");
                 }
             }
@@ -288,11 +291,12 @@ public class NormalCalculatorActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(operator == 0){
                     num = Integer.parseInt(textView.getText().toString());
-                    operator =1;
+                    operator =3;
+                    textView.setText("");
                 }
                 else {
                     num = Calulate(num,Integer.parseInt(textView.getText().toString()),operator);
-                    operator = 1;
+                    operator = 3;
                     textView.setText("");
                 }
             }
@@ -302,11 +306,12 @@ public class NormalCalculatorActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(operator == 0){
                     num = Integer.parseInt(textView.getText().toString());
-                    operator =1;
+                    operator =4;
+                    textView.setText("");
                 }
                 else {
                     num = Calulate(num,Integer.parseInt(textView.getText().toString()),operator);
-                    operator = 1;
+                    operator = 4;
                     textView.setText("");
                 }
             }
@@ -321,7 +326,7 @@ public class NormalCalculatorActivity extends AppCompatActivity {
                 else{
                     textView.setText(output);
                 }
-                operator = 8;
+                operator = 0;
                 num = 0;
             }
         });
@@ -330,7 +335,6 @@ public class NormalCalculatorActivity extends AppCompatActivity {
         switch (operator){
             case 1:
                 return num + thisNum;
-
             case 2:
                 return num - thisNum;
             case 3:
