@@ -6,11 +6,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class GeometryCircleActivity extends AppCompatActivity {
     Button btnCalculate;
@@ -21,7 +17,7 @@ public class GeometryCircleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_geometry_circle);
         btnCalculate = findViewById(R.id.btnCircleResult);
-        editRadius = findViewById(R.id.editCircleR);
+        editRadius = findViewById(R.id.edittriangleB);
         TextResult = findViewById(R.id.textCircleResult);
         btnCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
