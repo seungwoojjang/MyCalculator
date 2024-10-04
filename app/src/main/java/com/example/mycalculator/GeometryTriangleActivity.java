@@ -1,6 +1,10 @@
 package com.example.mycalculator;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,15 +14,27 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class GeometryTriangleActivity extends AppCompatActivity {
 
+    EditText editTriangleA;
+    Button btnCalculate;
+    EditText editTriangleB;
+    TextView TextTriangleResult;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_geometry_triangle);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+        btnCalculate = findViewById(R.id.btnTriangleResult);
+        editTriangleA = findViewById(R.id.editTriangleA);
+        editTriangleB = findViewById(R.id.editTriangleB);
+        TextTriangleResult = findViewById(R.id.textTriangleResult);
+        btnCalculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                double A = Double.parseDouble(editTriangleA.getText().toString());
+                double B = Double.parseDouble(editTriangleB.getText().toString());
+                double result = A*B/2;
+                TextTriangleResult.setText(""+result);
+            }
         });
     }
 }

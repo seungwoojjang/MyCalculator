@@ -30,7 +30,7 @@ public class GeometryParallelogramActivity extends AppCompatActivity {
             public void onClick(View v) {
                 double A = Double.parseDouble(editParallelogramA.getText().toString());
                 double B = Double.parseDouble(editParallelogramB.getText().toString());
-                double result = A+B/2;
+                double result = A*B;
                 textparallelogramResult.setText(""+result);
 
             }

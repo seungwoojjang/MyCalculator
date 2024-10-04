@@ -17,7 +17,7 @@ public class GeometryCircleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_geometry_circle);
         btnCalculate = findViewById(R.id.btnCircleResult);
-        editRadius = findViewById(R.id.edittriangleB);
+        editRadius = findViewById(R.id.editCircleR);
         TextResult = findViewById(R.id.textCircleResult);
         btnCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
